@@ -19,5 +19,9 @@ int main() {
     deinit_int_array(b);
     deinit_int_array(dest);
 
+    t_float_array d = init_float_array(5, 10);
+    display_float_array(d);
+    deinit_float_array(d);
+
     return 0;
 }

@@ -6,4 +6,6 @@
 
 void display_int_array(t_int_array ary);
 
+void display_float_array(t_float_array ary);
+
 #endif
