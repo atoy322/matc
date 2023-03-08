@@ -6,7 +6,7 @@
 
 ```C:main.c
 #include"array.h"
-#inclide"display.h"
+#include"display.h"
 
 int main() {
     // Allocate memory for array by args. (column=10, row=10)
