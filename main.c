@@ -23,5 +23,9 @@ int main() {
     display_float_array(d);
     deinit_float_array(d);
 
+    t_uchar_array e = init_uchar_array(10, 10);
+    display_uchar_array(e);
+    deinit_uchar_array(e);
+
     return 0;
 }
