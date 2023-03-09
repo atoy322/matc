@@ -29,5 +29,7 @@ int main() {
     deinit_int_array(A);
     deinit_int_array(B);
     deinit_int_array(Dest);
+
+    return 0;
 }
 ```
