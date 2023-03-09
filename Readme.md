@@ -1,4 +1,7 @@
 # Matrix implementation written in C
+Functions supported are:
+- add two arrays
+- display array data
 
 ## Feature
 
