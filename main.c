@@ -2,9 +2,9 @@
 #include"./display.h"
 
 int main() {
-    t_int_array a = init_int_array(10, 10);
-    t_int_array b = init_int_array(10, 10);
-    t_int_array dest = init_int_array(10, 10);
+    int_array_t a = init_int_array(10, 10);
+    int_array_t b = init_int_array(10, 10);
+    int_array_t dest = init_int_array(10, 10);
 
     a.array[0][4] = 1;
     b.array[6][8] = 727;
@@ -19,11 +19,11 @@ int main() {
     deinit_int_array(b);
     deinit_int_array(dest);
 
-    t_float_array d = init_float_array(5, 10);
+    float_array_t d = init_float_array(5, 10);
     display_float_array(d);
     deinit_float_array(d);
 
-    t_uchar_array e = init_uchar_array(10, 10);
+    uchar_array_t e = init_uchar_array(10, 10);
     display_uchar_array(e);
     deinit_uchar_array(e);
 

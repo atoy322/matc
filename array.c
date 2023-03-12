@@ -4,8 +4,8 @@
 
 /* Integer Array */
 
-t_int_array init_int_array(int col, int row) {
-    t_int_array X;
+int_array_t init_int_array(int col, int row) {
+    int_array_t X;
     X.col = col;
     X.row = row;
 
@@ -17,7 +17,7 @@ t_int_array init_int_array(int col, int row) {
     return X;
 }
 
-int deinit_int_array(t_int_array ary) {
+int deinit_int_array(int_array_t ary) {
     for(int y=0; y<ary.row; y++) {
         free(ary.array[y]);
     }
@@ -25,7 +25,7 @@ int deinit_int_array(t_int_array ary) {
     return 0;
 }
 
-int add_int_array(t_int_array a, t_int_array b, t_int_array dest) { 
+int add_int_array(int_array_t a, int_array_t b, int_array_t dest) { 
     if((a.col != b.col)||(a.row != b.row)||(dest.col != a.col)||(dest.row != b.row)) {
         return -1;
     } else {
@@ -40,8 +40,8 @@ int add_int_array(t_int_array a, t_int_array b, t_int_array dest) {
 
 /* Float Array */
 
-t_float_array init_float_array(int col, int row) {
-    t_float_array X;
+float_array_t init_float_array(int col, int row) {
+    float_array_t X;
     X.col = col;
     X.row = row;
 
@@ -53,7 +53,7 @@ t_float_array init_float_array(int col, int row) {
     return X;
 }
 
-int deinit_float_array(t_float_array ary) {
+int deinit_float_array(float_array_t ary) {
     for(int y=0; y<ary.row; y++) {
         free(ary.array[y]);
     }
@@ -61,7 +61,7 @@ int deinit_float_array(t_float_array ary) {
     return 0;
 }
 
-int add_float_array(t_float_array a, t_float_array b, t_float_array dest) { 
+int add_float_array(float_array_t a, float_array_t b, float_array_t dest) { 
     if((a.col != b.col)||(a.row != b.row)||(dest.col != a.col)||(dest.row != b.row)) {
         return -1;
     } else {
@@ -76,8 +76,8 @@ int add_float_array(t_float_array a, t_float_array b, t_float_array dest) {
 
 /* Double Array */
 
-t_double_array init_double_array(int col, int row) {
-    t_double_array X;
+double_array_t init_double_array(int col, int row) {
+    double_array_t X;
     X.col = col;
     X.row = row;
 
@@ -89,7 +89,7 @@ t_double_array init_double_array(int col, int row) {
     return X;
 }
 
-int deinit_double_array(t_double_array ary) {
+int deinit_double_array(double_array_t ary) {
     for(int y=0; y<ary.row; y++) {
         free(ary.array[y]);
     }
@@ -97,7 +97,7 @@ int deinit_double_array(t_double_array ary) {
     return 0;
 }
 
-int add_double_array(t_double_array a, t_double_array b, t_double_array dest) { 
+int add_double_array(double_array_t a, double_array_t b, double_array_t dest) { 
     if((a.col != b.col)||(a.row != b.row)||(dest.col != a.col)||(dest.row != b.row)) {
         return -1;
     } else {
@@ -112,8 +112,8 @@ int add_double_array(t_double_array a, t_double_array b, t_double_array dest) {
 
 /* Unsigned char Array */
 
-t_uchar_array init_uchar_array(int col, int row) {
-    t_uchar_array X;
+uchar_array_t init_uchar_array(int col, int row) {
+    uchar_array_t X;
     X.col = col;
     X.row = row;
 
@@ -125,7 +125,7 @@ t_uchar_array init_uchar_array(int col, int row) {
     return X;
 }
 
-int deinit_uchar_array(t_uchar_array ary) {
+int deinit_uchar_array(uchar_array_t ary) {
     for(int y=0; y<ary.row; y++) {
         free(ary.array[y]);
     }
@@ -133,7 +133,7 @@ int deinit_uchar_array(t_uchar_array ary) {
     return 0;
 }
 
-int add_uchar_array(t_uchar_array a, t_uchar_array b, t_uchar_array dest) { 
+int add_uchar_array(uchar_array_t a, uchar_array_t b, uchar_array_t dest) { 
     if((a.col != b.col)||(a.row != b.row)||(dest.col != a.col)||(dest.row != b.row)) {
         return -1;
     } else {
@@ -148,8 +148,8 @@ int add_uchar_array(t_uchar_array a, t_uchar_array b, t_uchar_array dest) {
 
 /* Long Array */
 
-t_long_array init_long_array(int col, int row) {
-    t_long_array X;
+long_array_t init_long_array(int col, int row) {
+    long_array_t X;
     X.col = col;
     X.row = row;
 
@@ -161,7 +161,7 @@ t_long_array init_long_array(int col, int row) {
     return X;
 }
 
-int deinit_long_array(t_long_array ary) {
+int deinit_long_array(long_array_t ary) {
     for(int y=0; y<ary.row; y++) {
         free(ary.array[y]);
     }
@@ -169,7 +169,7 @@ int deinit_long_array(t_long_array ary) {
     return 0;
 }
 
-int add_long_array(t_long_array a, t_long_array b, t_long_array dest) { 
+int add_long_array(long_array_t a, long_array_t b, long_array_t dest) { 
     if((a.col != b.col)||(a.row != b.row)||(dest.col != a.col)||(dest.row != b.row)) {
         return -1;
     } else {
