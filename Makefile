@@ -16,4 +16,4 @@ lib:
 	mkdir lib
 
 lib/include: lib
-	mkdir lib\include
+	mkdir "lib/include"
