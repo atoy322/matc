@@ -13,9 +13,9 @@ Functions supported are:
 
 int main() {
     // Allocate memory for array by args. (column=10, row=10)
-    t_int_array A = init_int_array(10, 10);
-    t_int_array B = init_int_array(10, 10);
-    t_int_array Dest = init_int_array(10, 10);
+    Iarray_t A = matcInitIArray(10, 10);
+    Iarray_t B = matcInitIArray(10, 10);
+    Iarray_t Dest = matcInitIArray(10, 10);
 
     // Set a value in the way follow
     A.array[0][0] = 1;
@@ -23,15 +23,15 @@ int main() {
 
     // All arrays must have same shape and type.
     // Dest = A + B
-    add_int_array(A, B, Dest);
+    matcAddIArray(A, B, Dest);
 
     // Display array data
-    display_int_array(Dest);
+    matcDisplayIArray(Dest);
 
     // Free memory allocated by init function.
-    deinit_int_array(A);
-    deinit_int_array(B);
-    deinit_int_array(Dest);
+    matcDeinitIArray(A);
+    matcDeinitIArray(B);
+    matcDeinitIArray(Dest);
 
     return 0;
 }

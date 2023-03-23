@@ -1,11 +1,43 @@
 #include"./array.h"
 
 
+/* XXXarray_t matcInitXXXArray(int col, int row) {
+    XXXarray_t X;
+    X.col = col;
+    X.row = row;
 
-/* Integer Array */
+    X.array = (YYY **)calloc(row, sizeof(YYY *));
+    for(int y=0; y<row; y++) {
+        X.array[y] = (YYY *)calloc(col, sizeof(YYY));
+    }
 
-int_array_t init_int_array(int col, int row) {
-    int_array_t X;
+    return X;
+}
+
+int matcDeinitXXXArray(XXXarray_t ary) {
+    for(int y=0; y<ary.row; y++) {
+        free(ary.array[y]);
+    }
+    free(ary.array);
+    return 0;
+}
+
+int matcAddXXXArray(XXXarray_t a, XXXarray_t b, XXXarray_t dest) { 
+    if((a.col != b.col)||(a.row != b.row)||(dest.col != a.col)||(dest.row != b.row)) {
+        return -1;
+    } else {
+        for(int y=0; y<a.row; y++) {
+            for(int x=0; x<a.col; x++) {
+                dest.array[y][x] = a.array[y][x] + b.array[y][x];
+            }
+        }
+    }
+    return 0;
+} */
+
+
+Iarray_t matcInitIArray(int col, int row) {
+    Iarray_t X;
     X.col = col;
     X.row = row;
 
@@ -17,7 +49,7 @@ int_array_t init_int_array(int col, int row) {
     return X;
 }
 
-int deinit_int_array(int_array_t ary) {
+int matcDeinitIArray(Iarray_t ary) {
     for(int y=0; y<ary.row; y++) {
         free(ary.array[y]);
     }
@@ -25,7 +57,7 @@ int deinit_int_array(int_array_t ary) {
     return 0;
 }
 
-int add_int_array(int_array_t a, int_array_t b, int_array_t dest) { 
+int matcAddIArray(Iarray_t a, Iarray_t b, Iarray_t dest) { 
     if((a.col != b.col)||(a.row != b.row)||(dest.col != a.col)||(dest.row != b.row)) {
         return -1;
     } else {
@@ -38,10 +70,8 @@ int add_int_array(int_array_t a, int_array_t b, int_array_t dest) {
     return 0;
 }
 
-/* Float Array */
-
-float_array_t init_float_array(int col, int row) {
-    float_array_t X;
+Farray_t matcInitFArray(int col, int row) {
+    Farray_t X;
     X.col = col;
     X.row = row;
 
@@ -53,7 +83,7 @@ float_array_t init_float_array(int col, int row) {
     return X;
 }
 
-int deinit_float_array(float_array_t ary) {
+int matcDeinitFArray(Farray_t ary) {
     for(int y=0; y<ary.row; y++) {
         free(ary.array[y]);
     }
@@ -61,7 +91,7 @@ int deinit_float_array(float_array_t ary) {
     return 0;
 }
 
-int add_float_array(float_array_t a, float_array_t b, float_array_t dest) { 
+int matcAddFArray(Farray_t a, Farray_t b, Farray_t dest) { 
     if((a.col != b.col)||(a.row != b.row)||(dest.col != a.col)||(dest.row != b.row)) {
         return -1;
     } else {
@@ -74,10 +104,8 @@ int add_float_array(float_array_t a, float_array_t b, float_array_t dest) {
     return 0;
 }
 
-/* Double Array */
-
-double_array_t init_double_array(int col, int row) {
-    double_array_t X;
+Darray_t matcInitDArray(int col, int row) {
+    Darray_t X;
     X.col = col;
     X.row = row;
 
@@ -89,7 +117,7 @@ double_array_t init_double_array(int col, int row) {
     return X;
 }
 
-int deinit_double_array(double_array_t ary) {
+int matcDeinitDArray(Darray_t ary) {
     for(int y=0; y<ary.row; y++) {
         free(ary.array[y]);
     }
@@ -97,7 +125,7 @@ int deinit_double_array(double_array_t ary) {
     return 0;
 }
 
-int add_double_array(double_array_t a, double_array_t b, double_array_t dest) { 
+int matcAddDArray(Darray_t a, Darray_t b, Darray_t dest) { 
     if((a.col != b.col)||(a.row != b.row)||(dest.col != a.col)||(dest.row != b.row)) {
         return -1;
     } else {
@@ -110,46 +138,8 @@ int add_double_array(double_array_t a, double_array_t b, double_array_t dest) {
     return 0;
 }
 
-/* Unsigned char Array */
-
-uchar_array_t init_uchar_array(int col, int row) {
-    uchar_array_t X;
-    X.col = col;
-    X.row = row;
-
-    X.array = (unsigned char **)calloc(row, sizeof(unsigned char *));
-    for(int y=0; y<row; y++) {
-        X.array[y] = (unsigned char *)calloc(col, sizeof(unsigned char));
-    }
-
-    return X;
-}
-
-int deinit_uchar_array(uchar_array_t ary) {
-    for(int y=0; y<ary.row; y++) {
-        free(ary.array[y]);
-    }
-    free(ary.array);
-    return 0;
-}
-
-int add_uchar_array(uchar_array_t a, uchar_array_t b, uchar_array_t dest) { 
-    if((a.col != b.col)||(a.row != b.row)||(dest.col != a.col)||(dest.row != b.row)) {
-        return -1;
-    } else {
-        for(int y=0; y<a.row; y++) {
-            for(int x=0; x<a.col; x++) {
-                dest.array[y][x] = a.array[y][x] + b.array[y][x];
-            }
-        }
-    }
-    return 0;
-}
-
-/* Long Array */
-
-long_array_t init_long_array(int col, int row) {
-    long_array_t X;
+Larray_t matcInitLArray(int col, int row) {
+    Larray_t X;
     X.col = col;
     X.row = row;
 
@@ -161,7 +151,7 @@ long_array_t init_long_array(int col, int row) {
     return X;
 }
 
-int deinit_long_array(long_array_t ary) {
+int matcDeinitLArray(Larray_t ary) {
     for(int y=0; y<ary.row; y++) {
         free(ary.array[y]);
     }
@@ -169,7 +159,7 @@ int deinit_long_array(long_array_t ary) {
     return 0;
 }
 
-int add_long_array(long_array_t a, long_array_t b, long_array_t dest) { 
+int matcAddLArray(Larray_t a, Larray_t b, Larray_t dest) { 
     if((a.col != b.col)||(a.row != b.row)||(dest.col != a.col)||(dest.row != b.row)) {
         return -1;
     } else {
@@ -181,3 +171,4 @@ int add_long_array(long_array_t a, long_array_t b, long_array_t dest) {
     }
     return 0;
 }
+
