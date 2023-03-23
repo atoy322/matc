@@ -9,7 +9,7 @@
 } XXXarray_t;
 
 
-XXXarray_t matcInitXXXArray(int col, int row);
+XXXarray_t matcInitXXXArray(int row, int col);
 int matcDeinitXXXArray(XXXarray_t ary);
 int matcAddXXXArray(XXXarray_t a, XXXarray_t b, XXXarray_t dest);
 int matcDotXXXArray(XXXarray_t a, XXXarray_t b, XXXarray_t dest); */
