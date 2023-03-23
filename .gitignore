@@ -2,3 +2,4 @@ test
 test.exe
 *.o
 template
+lib
