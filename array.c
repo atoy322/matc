@@ -1,7 +1,7 @@
 #include"./array.h"
 
 
-/* XXXarray_t matcInitXXXArray(int col, int row) {
+/* XXXarray_t matcInitXXXArray(int row, int col) {
     XXXarray_t X;
     X.col = col;
     X.row = row;
@@ -54,7 +54,7 @@ int matcDotXXXArray(XXXarray_t a, XXXarray_t b, XXXarray_t dest) {
 } */
 
 
-Iarray_t matcInitIArray(int col, int row) {
+Iarray_t matcInitIArray(int row, int col) {
     Iarray_t X;
     X.col = col;
     X.row = row;
@@ -106,7 +106,7 @@ int matcDotIArray(Iarray_t a, Iarray_t b, Iarray_t dest) {
     return 0;
 }
 
-Farray_t matcInitFArray(int col, int row) {
+Farray_t matcInitFArray(int row, int col) {
     Farray_t X;
     X.col = col;
     X.row = row;
@@ -158,7 +158,7 @@ int matcDotFArray(Farray_t a, Farray_t b, Farray_t dest) {
     return 0;
 }
 
-Darray_t matcInitDArray(int col, int row) {
+Darray_t matcInitDArray(int row, int col) {
     Darray_t X;
     X.col = col;
     X.row = row;
@@ -210,7 +210,7 @@ int matcDotDArray(Darray_t a, Darray_t b, Darray_t dest) {
     return 0;
 }
 
-Larray_t matcInitLArray(int col, int row) {
+Larray_t matcInitLArray(int row, int col) {
     Larray_t X;
     X.col = col;
     X.row = row;

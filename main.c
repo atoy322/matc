@@ -2,34 +2,32 @@
 #include"./display.h"
 
 int main() {
-    Iarray_t a = matcInitIArray(10, 10);
-    Iarray_t b = matcInitIArray(10, 10);
-    Iarray_t dest = matcInitIArray(10, 10);
-    Iarray_t dest2 = matcInitIArray(10, 10);
 
-    a.array[0][4] = 1;
-    b.array[6][8] = 727;
+    Iarray_t a = matcInitIArray(6, 4);
+    Iarray_t b = matcInitIArray(4, 7);
+    Iarray_t dst = matcInitIArray(6, 7);
 
-    int ret = matcAddIArray(a, b, dest);
-    if(ret != 0) {
-        return -1;
+    for(int i=0; i<a.row; i++) {
+        for(int j=0; j<a.col; j++) {
+            a.array[i][j] = j + a.col*i;
+        }
+    }
+    for(int i=0; i<b.row; i++) {
+        for(int j=0; j<b.col; j++) {
+            b.array[i][j] = j + b.col*i;
+        }
     }
 
-    ret = matcDotIArray(a, b, dest2);
-    if(ret != 0) {
-        return -1;
-    }
+    matcDotIArray(a, b, dst);
 
-    matcDisplayIArray(dest);
-    matcDisplayIArray(dest2);
+    matcDisplayIArray(a);
+    matcDisplayIArray(b);
+    matcDisplayIArray(dst);
+
+
     matcDeinitIArray(a);
     matcDeinitIArray(b);
-    matcDeinitIArray(dest);
-    matcDeinitIArray(dest2);
-
-    Farray_t d = matcInitFArray(5, 10);
-    matcDisplayFArray(d);
-    matcDeinitFArray(d);
+    matcDeinitIArray(dst);
 
     return 0;
 }
