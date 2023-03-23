@@ -17,3 +17,7 @@ lib:
 
 lib/include: lib
 	mkdir "lib/include"
+
+clean:
+	rm -rf lib
+	rm *.o
