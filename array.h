@@ -11,8 +11,8 @@
 
 XXXarray_t matcInitXXXArray(int col, int row);
 int matcDeinitXXXArray(XXXarray_t ary);
-int matcAddXXXArray(XXXarray_t a, XXXarray_t b, XXXarray_t dest); */
-
+int matcAddXXXArray(XXXarray_t a, XXXarray_t b, XXXarray_t dest);
+int matcDotXXXArray(XXXarray_t a, XXXarray_t b, XXXarray_t dest); */
 
 
 typedef struct {
@@ -25,6 +25,7 @@ typedef struct {
 Iarray_t matcInitIArray(int col, int row);
 int matcDeinitIArray(Iarray_t ary);
 int matcAddIArray(Iarray_t a, Iarray_t b, Iarray_t dest);
+int matcDotIArray(Iarray_t a, Iarray_t b, Iarray_t dest);
 
 typedef struct {
     int col;
@@ -36,6 +37,7 @@ typedef struct {
 Farray_t matcInitFArray(int col, int row);
 int matcDeinitFArray(Farray_t ary);
 int matcAddFArray(Farray_t a, Farray_t b, Farray_t dest);
+int matcDotFArray(Farray_t a, Farray_t b, Farray_t dest);
 
 typedef struct {
     int col;
@@ -47,6 +49,7 @@ typedef struct {
 Darray_t matcInitDArray(int col, int row);
 int matcDeinitDArray(Darray_t ary);
 int matcAddDArray(Darray_t a, Darray_t b, Darray_t dest);
+int matcDotDArray(Darray_t a, Darray_t b, Darray_t dest);
 
 typedef struct {
     int col;
@@ -58,6 +61,7 @@ typedef struct {
 Larray_t matcInitLArray(int col, int row);
 int matcDeinitLArray(Larray_t ary);
 int matcAddLArray(Larray_t a, Larray_t b, Larray_t dest);
+int matcDotLArray(Larray_t a, Larray_t b, Larray_t dest);
 
 
 #endif

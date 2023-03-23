@@ -33,6 +33,24 @@ int matcAddXXXArray(XXXarray_t a, XXXarray_t b, XXXarray_t dest) {
         }
     }
     return 0;
+}
+
+int matcDotXXXArray(XXXarray_t a, XXXarray_t b, XXXarray_t dest) {
+    if(a.col != b.row) {
+        return -1;
+    } else if((a.row != dest.row) || (b.col != dest.col)) {
+        return -1;
+    }
+
+    for(int i=0; i<a.row; i++) {
+        for(int j=0; j<b.col; j++) {
+            for(int k=0; k<a.col; k++) {
+                dest.array[i][j] += a.array[i][k] * b.array[k][j];
+            }
+        }
+    }
+
+    return 0;
 } */
 
 
@@ -70,6 +88,24 @@ int matcAddIArray(Iarray_t a, Iarray_t b, Iarray_t dest) {
     return 0;
 }
 
+int matcDotIArray(Iarray_t a, Iarray_t b, Iarray_t dest) {
+    if(a.col != b.row) {
+        return -1;
+    } else if((a.row != dest.row) || (b.col != dest.col)) {
+        return -1;
+    }
+
+    for(int i=0; i<a.row; i++) {
+        for(int j=0; j<b.col; j++) {
+            for(int k=0; k<a.col; k++) {
+                dest.array[i][j] += a.array[i][k] * b.array[k][j];
+            }
+        }
+    }
+
+    return 0;
+}
+
 Farray_t matcInitFArray(int col, int row) {
     Farray_t X;
     X.col = col;
@@ -101,6 +137,24 @@ int matcAddFArray(Farray_t a, Farray_t b, Farray_t dest) {
             }
         }
     }
+    return 0;
+}
+
+int matcDotFArray(Farray_t a, Farray_t b, Farray_t dest) {
+    if(a.col != b.row) {
+        return -1;
+    } else if((a.row != dest.row) || (b.col != dest.col)) {
+        return -1;
+    }
+
+    for(int i=0; i<a.row; i++) {
+        for(int j=0; j<b.col; j++) {
+            for(int k=0; k<a.col; k++) {
+                dest.array[i][j] += a.array[i][k] * b.array[k][j];
+            }
+        }
+    }
+
     return 0;
 }
 
@@ -138,6 +192,24 @@ int matcAddDArray(Darray_t a, Darray_t b, Darray_t dest) {
     return 0;
 }
 
+int matcDotDArray(Darray_t a, Darray_t b, Darray_t dest) {
+    if(a.col != b.row) {
+        return -1;
+    } else if((a.row != dest.row) || (b.col != dest.col)) {
+        return -1;
+    }
+
+    for(int i=0; i<a.row; i++) {
+        for(int j=0; j<b.col; j++) {
+            for(int k=0; k<a.col; k++) {
+                dest.array[i][j] += a.array[i][k] * b.array[k][j];
+            }
+        }
+    }
+
+    return 0;
+}
+
 Larray_t matcInitLArray(int col, int row) {
     Larray_t X;
     X.col = col;
@@ -169,6 +241,24 @@ int matcAddLArray(Larray_t a, Larray_t b, Larray_t dest) {
             }
         }
     }
+    return 0;
+}
+
+int matcDotLArray(Larray_t a, Larray_t b, Larray_t dest) {
+    if(a.col != b.row) {
+        return -1;
+    } else if((a.row != dest.row) || (b.col != dest.col)) {
+        return -1;
+    }
+
+    for(int i=0; i<a.row; i++) {
+        for(int j=0; j<b.col; j++) {
+            for(int k=0; k<a.col; k++) {
+                dest.array[i][j] += a.array[i][k] * b.array[k][j];
+            }
+        }
+    }
+
     return 0;
 }
 
