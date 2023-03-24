@@ -44,6 +44,7 @@ int matcDotXXXArray(XXXarray_t a, XXXarray_t b, XXXarray_t dest) {
 
     for(int i=0; i<a.row; i++) {
         for(int j=0; j<b.col; j++) {
+            dest.array[i][j] = 0;
             for(int k=0; k<a.col; k++) {
                 dest.array[i][j] += a.array[i][k] * b.array[k][j];
             }
