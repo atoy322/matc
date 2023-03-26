@@ -3,7 +3,7 @@
 ## About this
 A tiny, low level C program which treats matrix.
 
-## Feature
+## Features
 Functions supported are:
 - adding two arrays
 - displaying array data
@@ -22,12 +22,13 @@ make archive
 #include"display.h"
 
 int main() {
-    // Allocate memory for array by args. (column=10, row=10)
+    // Allocate memory for array. (column=10, row=10)
+    // "I" refers to int: ("F"=float, "D"=double, "L"=long)
     Iarray_t A = matcInitIArray(10, 10);
     Iarray_t B = matcInitIArray(10, 10);
     Iarray_t Dest = matcInitIArray(10, 10);
 
-    // Set a value in the way follow
+    // Set a value in the way follow.
     A.array[0][0] = 1;
     B.array[9][9] = 1;
 
@@ -35,7 +36,10 @@ int main() {
     // Dest = A + B
     matcAddIArray(A, B, Dest);
 
-    // Display array data
+    // Calculate matrix product.
+    matcDotIArray(A, B, Dest);
+
+    // Display array data.
     matcDisplayIArray(Dest);
 
     // Free memory allocated by init function.
