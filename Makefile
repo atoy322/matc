@@ -6,18 +6,21 @@ build_linux:
 	gcc -c *.c
 	gcc *.o -o test
 
-archive: lib/include
+archive: libmatc/include libmatc/lib
 	gcc -c array.c display.c
-	ar r lib/libmatc.a array.o display.o
-	cp array.h lib/include
-	cp display.h lib/include
+	ar r libmatc/lib/libmatc.a array.o display.o
+	cp array.h libmatc/include
+	cp display.h libmatc/include
 
-lib:
-	mkdir lib
+libmatc:
+	mkdir libmatc
 
-lib/include: lib
-	mkdir "lib/include"
+libmatc/include: libmatc
+	mkdir "libmatc/include"
+
+libmatc/lib: libmatc
+	mkdir "libmatc/lib"
 
 clean:
-	rm -rf lib
+	rm -rf libmatc
 	rm *.o
