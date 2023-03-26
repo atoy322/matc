@@ -9,14 +9,14 @@ Functions supported are:
 - displaying array data
 - calculating matrix product
 
-## Build a static library
+## How to build a static library
 ```bash
 git clone https://github.com/atoy322/matc.git
 cd matc
-make archive
+make static
 ```
 
-## Usage
+## How to use
 ```C:main.c
 #include"array.h"
 #include"display.h"
@@ -49,4 +49,10 @@ int main() {
 
     return 0;
 }
+```
+
+and then
+```bash
+gcc -c {your c program}.c -I./libmatc/include
+gcc {your c program}.o -o main.exe -L./libmatc/lib/libmatc.a -lmatc 
 ```
