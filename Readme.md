@@ -1,12 +1,22 @@
 # Matrix implementation written in C
+
+## About this
+A tiny, low level C program which treats matrix.
+
+## Feature
 Functions supported are:
 - adding two arrays
 - displaying array data
+- calculating matrix product
 
-## Feature
+## Build a static library
+```bash
+git clone https://github.com/atoy322/matc.git
+cd matc
+make archive
+```
 
 ## Usage
-
 ```C:main.c
 #include"array.h"
 #include"display.h"
