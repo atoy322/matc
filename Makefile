@@ -1,3 +1,15 @@
+static: libmatc/include libmatc/lib
+	gcc -c array.c display.c
+	ar r libmatc/lib/libmatc.a array.o display.o
+	cp array.h libmatc/include
+	cp display.h libmatc/include
+
+shared: libmatc/include libmatc/lib
+	gcc -c array.c display.c
+	gcc array.o display.o -shared -o libmatc/lib/libmatc.so
+	cp array.h libmatc/include
+	cp display.h libmatc/include
+
 build_windows:
 	gcc -c *.c
 	gcc *.o -o test.exe
@@ -5,12 +17,6 @@ build_windows:
 build_linux:
 	gcc -c *.c
 	gcc *.o -o test
-
-archive: libmatc/include libmatc/lib
-	gcc -c array.c display.c
-	ar r libmatc/lib/libmatc.a array.o display.o
-	cp array.h libmatc/include
-	cp display.h libmatc/include
 
 libmatc:
 	mkdir libmatc
