@@ -52,7 +52,7 @@ int main() {
 ```
 
 and then
-```bash
+```shell
 gcc -c {your c program}.c -I./libmatc/include
 gcc {your c program}.o -o main.exe -L./libmatc/lib/libmatc.a -lmatc 
 ```
