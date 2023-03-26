@@ -9,17 +9,17 @@ Functions supported are:
 - displaying array data
 - calculating matrix product
 
-## How to build a static library
-```bash
+## How to build a static or shared library
+```shell
 git clone https://github.com/atoy322/matc.git
 cd matc
 make static
+# make shared
 ```
 
 ## How to use
 ```C:main.c
-#include"array.h"
-#include"display.h"
+#include <matc.h>
 
 int main() {
     // Allocate memory for array. (column=10, row=10)
