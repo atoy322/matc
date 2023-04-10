@@ -3,6 +3,9 @@
 ## About this
 A tiny, low level C program which treats matrix.
 
+**Caution**
+This project is in development.
+
 ## Features
 Functions supported are:
 - adding two arrays
