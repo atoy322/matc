@@ -3,8 +3,8 @@
 ## About this
 A tiny, low level C program which treats matrix.
 
-**Warning**
-This project is in development.
+> **Warning**
+> This project is in development.
 
 ## Features
 Functions supported are:
