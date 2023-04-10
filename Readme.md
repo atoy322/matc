@@ -3,7 +3,7 @@
 ## About this
 A tiny, low level C program which treats matrix.
 
-**Caution**
+**Warning**
 This project is in development.
 
 ## Features
