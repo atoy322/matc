@@ -11,7 +11,7 @@ typedef struct {
 
 
 matrix_t matcInit(int row, int col);
-int matcDeinit(matrix_t ary);
+int matcDeinit(matrix_t mat);
 int matcCopy(matrix_t src, matrix_t dest);
 int matcAdd(matrix_t a, matrix_t b, matrix_t dest);
 int matcDot(matrix_t a, matrix_t b, matrix_t dest);

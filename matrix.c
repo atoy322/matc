@@ -14,11 +14,11 @@ matrix_t matcInit(int row, int col) {
     return X;
 }
 
-int matcDeinit(matrix_t ary) {
-    for(int y=0; y<ary.row; y++) {
-        free(ary.array[y]);
+int matcDeinit(matrix_t mat) {
+    for(int y=0; y<mat.row; y++) {
+        free(mat.array[y]);
     }
-    free(ary.array);
+    free(mat.array);
     return 0;
 }
 
