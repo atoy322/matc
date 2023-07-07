@@ -21,6 +21,8 @@ int main() {
 
     matcRref(A);
 
+    matcPdot(0, 2, Ec);
+
     matcDisplay(A);
     matcDisplay(Ec);
     matcDisplay(dest);
