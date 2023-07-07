@@ -1,3 +1,3 @@
-#include "array.h"
+#include "matrix.h"
 #include "display.h"
 

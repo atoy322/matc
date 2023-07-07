@@ -1,33 +1,33 @@
-#include"./array.h"
-#include"./display.h"
+#include"./matc.h"
+#include "display.h"
+#include "matrix.h"
 
 int main() {
+    matrix_t A = matcInit(3, 5);
+    matrix_t E = matcInit(5, 5);
+    matrix_t Ec= matcInit(5, 5);
+    matrix_t dest = matcInit(3, 5);
 
-    Iarray_t a = matcInitIArray(6, 4);
-    Iarray_t b = matcInitIArray(4, 7);
-    Iarray_t dst = matcInitIArray(6, 7);
-
-    for(int i=0; i<a.row; i++) {
-        for(int j=0; j<a.col; j++) {
-            a.array[i][j] = j + a.col*i;
-        }
-    }
-    for(int i=0; i<b.row; i++) {
-        for(int j=0; j<b.col; j++) {
-            b.array[i][j] = j + b.col*i;
+    for(int i=0; i<3; i++) {
+        for(int j=0; j<5; j++) {
+            A.array[i][j] = j + 5*i + 1;
         }
     }
 
-    matcDotIArray(a, b, dst);
+    matcEye(5, E);
+    matcCopy(E, Ec);
 
-    matcDisplayIArray(a);
-    matcDisplayIArray(b);
-    matcDisplayIArray(dst);
+    matcDot(A, E, dest);
 
+    matcRref(A);
 
-    matcDeinitIArray(a);
-    matcDeinitIArray(b);
-    matcDeinitIArray(dst);
+    matcDisplay(A);
+    matcDisplay(Ec);
+    matcDisplay(dest);
+
+    matcDeinit(A);
+    matcDeinit(E);
+    matcDeinit(dest);
 
     return 0;
 }
