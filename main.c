@@ -1,6 +1,4 @@
 #include"./matc.h"
-#include "display.h"
-#include "matrix.h"
 
 int main() {
     double b[3][4] = {
