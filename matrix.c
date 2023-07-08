@@ -130,7 +130,7 @@ int matcRref(matrix_t mat) {
         comp = rp; // 行ポインタが指している行を「完了」とする
     }
 
-    return 0;
+    return comp+1;
 }
 
 int matcColadd(matrix_t A, matrix_t B, matrix_t dest) {
