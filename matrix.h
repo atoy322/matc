@@ -17,9 +17,9 @@ int matcAdd(matrix_t a, matrix_t b, matrix_t dest);
 int matcDot(matrix_t a, matrix_t b, matrix_t dest);
 int matcEye(int n, matrix_t dest);
 
-void matcPdot(int i, int c, matrix_t mat);
+void matcPdot(int i, double c, matrix_t mat);
 void matcQdot(int i, int j, matrix_t mat);
-void matcRdot(int i, int j, int c, matrix_t mat);
+void matcRdot(int i, int j, double c, matrix_t mat);
 int matcRref(matrix_t A);
 
 #endif

@@ -78,7 +78,7 @@ int matcEye(int n, matrix_t dest) {
     return 0;
 }
 
-void matcPdot(int i, int c, matrix_t mat) {
+void matcPdot(int i, double c, matrix_t mat) {
     for(int j=0; j<mat.col; j++)
         mat.array[i][j] = mat.array[i][j]*c;
 }
@@ -92,7 +92,7 @@ void matcQdot(int i, int j, matrix_t mat) {
     }
 }
 
-void matcRdot(int i, int j, int c, matrix_t mat) {
+void matcRdot(int i, int j, double c, matrix_t mat) {
     for(int n=0; n<mat.col; n++)
         mat.array[i][n] = mat.array[i][n] + mat.array[j][n]*c;
 }
@@ -107,8 +107,9 @@ int matcRref(matrix_t mat) {
             if(rp > mat.row-1) break;
         }
         if(rp > mat.row-1) break;
-        matcPdot(rp, 1/mat.array[rp][n], mat);
+        matcPdot(rp, (double)1/mat.array[rp][n], mat);
         matcQdot(rp, comp+1, mat);
+        rp = comp+1;
 
         for(int m=0; m<mat.row; m++) {
             if(m != rp)
