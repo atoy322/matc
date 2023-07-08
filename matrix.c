@@ -132,3 +132,44 @@ int matcRref(matrix_t mat) {
 
     return 0;
 }
+
+int matcColadd(matrix_t A, matrix_t B, matrix_t dest) {
+    if(A.col + B.col > dest.col) return -1;
+
+    for(int i=0; i<A.row; i++) {
+        for(int j=0; j<A.col; j++) {
+            dest.array[i][j] = A.array[i][j];
+        }
+    }
+    for(int i=0; i<A.row; i++) {
+        for(int j=0; j<B.col; j++) {
+            dest.array[i][j+A.col] = B.array[i][j];
+        }
+    }
+
+    return 0;
+}
+
+int matcInv(matrix_t A, matrix_t dest) {
+    if(A.row != A.col) return -1;
+    if(dest.row != dest.col) return -1;
+    if(A.row != dest.row) return -1;
+
+    matrix_t tmp = matcInit(A.row, A.col*2);
+    matrix_t E = matcInit(A.row, A.row);
+    matcEye(A.row, E);
+
+    matcColadd(A, E, tmp);
+    matcRref(tmp);
+
+    for(int i=0; i<A.row; i++) {
+        for(int j=0; j<A.col; j++) {
+            dest.array[i][j] = tmp.array[i][j+A.col];
+        }
+    }
+
+    matcDeinit(tmp);
+    matcDeinit(E);
+
+    return 0;
+}
