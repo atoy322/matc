@@ -3,6 +3,7 @@
 
 
 matrix_t matcInit(int row, int col) {
+    // メモリ割り当て
     matrix_t X;
     X.col = col;
     X.row = row;
@@ -16,6 +17,7 @@ matrix_t matcInit(int row, int col) {
 }
 
 int matcDeinit(matrix_t mat) {
+    // メモリ解放
     for(int y=0; y<mat.row; y++) {
         free(mat.array[y]);
     }
@@ -24,6 +26,7 @@ int matcDeinit(matrix_t mat) {
 }
 
 int matcCopy(matrix_t src, matrix_t dest){
+    // コピー
     if((src.row != dest.row) || (src.col != dest.col))
         return -1;
 
@@ -37,6 +40,7 @@ int matcCopy(matrix_t src, matrix_t dest){
 }
 
 int matcAdd(matrix_t a, matrix_t b, matrix_t dest) { 
+    // 加算
     if((a.col != b.col)||(a.row != b.row)||(dest.col != a.col)||(dest.row != b.row)) {
         return -1;
     } else {
@@ -50,6 +54,7 @@ int matcAdd(matrix_t a, matrix_t b, matrix_t dest) {
 }
 
 int matcDot(matrix_t a, matrix_t b, matrix_t dest) {
+    // 行列積
     if(a.col != b.row) {
         return -1;
     } else if((a.row != dest.row) || (b.col != dest.col)) {
@@ -69,6 +74,7 @@ int matcDot(matrix_t a, matrix_t b, matrix_t dest) {
 }
 
 int matcEye(int n, matrix_t dest) {
+    // n次単位行列
     if((dest.row < n) || (dest.col < n))
         return -1;
 
@@ -79,11 +85,13 @@ int matcEye(int n, matrix_t dest) {
 }
 
 void matcPdot(int i, double c, matrix_t mat) {
+    // 行基本変形(第i行をc倍)
     for(int j=0; j<mat.col; j++)
         mat.array[i][j] = mat.array[i][j]*c;
 }
 
 void matcQdot(int i, int j, matrix_t mat) {
+    // 行基本変形(第i行と第j行を入れ替え)
     double tmp;
     for(int n=0; n<mat.col; n++) {
         tmp = mat.array[i][n];
@@ -93,29 +101,34 @@ void matcQdot(int i, int j, matrix_t mat) {
 }
 
 void matcRdot(int i, int j, double c, matrix_t mat) {
+    // 行基本変形(第i行に第j行のc倍を加算)
     for(int n=0; n<mat.col; n++)
-        mat.array[i][n] = mat.array[i][n] + mat.array[j][n]*c;
+        mat.array[i][n] += mat.array[j][n]*c;
 }
 
 int matcRref(matrix_t mat) {
-    int rp;
-    int comp = -1;
+    // 行列を簡約化する関数
+    int rp; // 行ポインタ(スタックポインタ的な)
+    int comp = -1; // 要ができた行(completed)
+
     for(int n=0; n<mat.col; n++) {
         rp = 0;
         while((mat.array[rp][n]==0) || (rp <= comp)) {
+            // 主成分が0でない、かつ要ができていない行に行ポインタを合わせる
             rp++;
             if(rp > mat.row-1) break;
         }
         if(rp > mat.row-1) break;
-        matcPdot(rp, (double)1/mat.array[rp][n], mat);
-        matcQdot(rp, comp+1, mat);
-        rp = comp+1;
+        matcPdot(rp, (double)1/mat.array[rp][n], mat); // 主成分を1にする
+        matcQdot(rp, comp+1, mat); // 行を入れ替えて、要を階段状に配置する
+        rp = comp+1; // 行ポインタも入れ替える
 
         for(int m=0; m<mat.row; m++) {
             if(m != rp)
-                matcRdot(m, rp, -mat.array[m][n], mat);
+                matcRdot(m, rp, -mat.array[m][n], mat); // 行ポインタが指している行の主成分で他の行を掃出し
         }
-        comp = rp;
+        comp = rp; // 行ポインタが指している行を「完了」とする
     }
+
     return 0;
 }
