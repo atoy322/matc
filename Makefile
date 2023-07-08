@@ -4,16 +4,16 @@
 ifeq  ($(OS),)
 
 main: main.o matrix.o display.o
-	gcc main.o matrix.o display.o -o main
+	gcc main.o matrix.o display.o -o main -g
 
 main.o: main.c
-	gcc -c main.c
+	gcc -c main.c -g
 
 matrix.o: matrix.h matrix.c
-	gcc -c matrix.c
+	gcc -c matrix.c -g
 
 display.o: display.h display.c
-	gcc -c display.c
+	gcc -c display.c -g
 
 static: matrix.o display.o
 	-mkdir libmatc
@@ -29,16 +29,16 @@ clean:
 else ifeq ($(OS),Windows_NT)
 
 main.exe: main.o matrix.o display.o
-	gcc main.o matrix.o display.o -o main.exe
+	gcc main.o matrix.o display.o -o main.exe -g
 
 main.o: main.c
-	gcc -c main.c
+	gcc -c main.c -g
 
 matrix.o: matrix.h matrix.c
-	gcc -c matrix.c
+	gcc -c matrix.c -g
 
 display.o: display.h display.c
-	gcc -c display.c
+	gcc -c display.c -g
 
 static: matrix.o display.o
 	-mkdir libmatc

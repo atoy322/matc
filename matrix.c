@@ -1,4 +1,5 @@
 #include"./matrix.h"
+#include <stdio.h>
 
 
 matrix_t matcInit(int row, int col) {
@@ -93,11 +94,27 @@ void matcQdot(int i, int j, matrix_t mat) {
 
 void matcRdot(int i, int j, int c, matrix_t mat) {
     for(int n=0; n<mat.col; n++)
-        mat.array[i][n] = mat.array[j][n]*c;
+        mat.array[i][n] = mat.array[i][n] + mat.array[j][n]*c;
 }
 
-int matcRref(matrix_t A) {
-    for(int n=0; n<A.col; n++) {
+int matcRref(matrix_t mat) {
+    int rp;
+    int comp = -1;
+    for(int n=0; n<mat.col; n++) {
+        rp = 0;
+        while((mat.array[rp][n]==0) || (rp <= comp)) {
+            rp++;
+            if(rp > mat.row-1) break;
+        }
+        if(rp > mat.row-1) break;
+        matcPdot(rp, 1/mat.array[rp][n], mat);
+        matcQdot(rp, comp+1, mat);
+
+        for(int m=0; m<mat.row; m++) {
+            if(m != rp)
+                matcRdot(m, rp, -mat.array[m][n], mat);
+        }
+        comp = rp;
     }
     return 0;
 }
