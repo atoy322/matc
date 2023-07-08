@@ -42,12 +42,13 @@ display.o: display.h display.c
 
 static: matrix.o display.o
 	-mkdir libmatc
-	-mkdir libmatc/lib
-	-mkdir libmatc/include
-	cp *.h libmatc/include
+	-mkdir libmatc\lib
+	-mkdir libmatc\include
+	cp *.h libmatc\include
 	ar r libmatc/lib/libmatc.a matrix.o display.o
 
 clean:
 	-rm *.o main.exe
+	-rm -r libmatc
 
 endif
