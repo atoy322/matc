@@ -1,4 +1,4 @@
-.PHONY: clean static
+.PHONY: clean static shared
 
 
 ifeq  ($(OS),)
@@ -21,6 +21,13 @@ static: matrix.o display.o
 	-mkdir libmatc/include
 	cp *.h libmatc/include
 	ar r libmatc/lib/libmatc.a matrix.o display.o
+
+shared: matrix.o display.o
+	-mkdir libmatc
+	-mkdir libmatc/lib
+	-mkdir libmatc/include
+	cp *.h libmatc/include
+	gcc matrix.o display.o -o libmatc/lib/libmatc.so -shared
 
 clean:
 	-rm *.o main
@@ -46,6 +53,13 @@ static: matrix.o display.o
 	-mkdir libmatc\include
 	cp *.h libmatc\include
 	ar r libmatc/lib/libmatc.a matrix.o display.o
+
+shared: matrix.o display.o
+	-mkdir libmatc
+	-mkdir libmatc\lib
+	-mkdir libmatc\include
+	cp *.h libmatc\include
+	gcc matrix.o display.o -o libmatc/lib/libmatc.so -shared
 
 clean:
 	-rm *.o main.exe
