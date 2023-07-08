@@ -5,6 +5,7 @@
 #include"./matrix.h"
 
 
-void matcDisplay(matrix_t ary);
+void matcDisplay(matrix_t mat);
+void matcDisplayf(const char *fmt, matrix_t mat);
 
 #endif

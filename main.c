@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include"./matc.h"
 
 int main() {
@@ -19,7 +20,8 @@ int main() {
     matcInv(A, dest);
 
     matcDisplay(A);
-    matcDisplay(dest);
+    printf("\n");
+    matcDisplayf("%+8.5f", dest);
 
     matcDeinit(A);
     matcDeinit(dest);
