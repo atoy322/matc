@@ -109,28 +109,28 @@ void matcRdot(int i, int j, double c, matrix_t mat) {
 int matcRref(matrix_t mat) {
     // 行列を簡約化する関数
     int rp; // 行ポインタ(スタックポインタ的な)
-    int comp = -1; // 要ができた行(completed)
+    int rank = -1; // 要ができた行
 
     for(int n=0; n<mat.col; n++) {
         rp = 0;
-        while((mat.array[rp][n]==0) || (rp <= comp)) {
+        while((mat.array[rp][n]==0) || (rp <= rank)) {
             // 主成分が0でない、かつ要ができていない行に行ポインタを合わせる
             rp++;
             if(rp > mat.row-1) break;
         }
         if(rp > mat.row-1) break;
         matcPdot(rp, (double)1/mat.array[rp][n], mat); // 主成分を1にする
-        matcQdot(rp, comp+1, mat); // 行を入れ替えて、要を階段状に配置する
-        rp = comp+1; // 行ポインタも入れ替える
+        matcQdot(rp, rank+1, mat); // 行を入れ替えて、要を階段状に配置する
+        rp = rank+1; // 行ポインタも入れ替える
 
         for(int m=0; m<mat.row; m++) {
             if(m != rp)
                 matcRdot(m, rp, -mat.array[m][n], mat); // 行ポインタが指している行の主成分で他の行を掃出し
         }
-        comp = rp; // 行ポインタが指している行を「完了」とする
+        rank = rp; // 行ポインタが指している行を「完了」とする
     }
 
-    return comp+1;
+    return rank+1;
 }
 
 int matcColadd(matrix_t A, matrix_t B, matrix_t dest) {
