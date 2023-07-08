@@ -12,7 +12,7 @@ Functions supported are:
 - displaying an array data
 - calculating a matrix product
 - simplifying a matrix
-- calculating a inverse matrix
+- calculating an inverse matrix
 
 ## How to build a static or shared library
 ```shell
