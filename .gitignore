@@ -1,4 +1,4 @@
-test
-test.exe
 *.o
 libmatc
+main
+main.exe
