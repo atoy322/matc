@@ -3,5 +3,6 @@
 
 #include "matrix.h"
 #include "display.h"
+#include "fileio.h"
 
 #endif
