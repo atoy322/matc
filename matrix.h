@@ -31,6 +31,6 @@ int matcColadd(matrix_t A, matrix_t B, matrix_t dest);
 
 int matcInv(matrix_t A, matrix_t dest);
 
-int matcDet3x3(matrix_t m33, double det);
+int matcDet3x3(matrix_t m33, double *det);
 
 #endif

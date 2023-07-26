@@ -179,3 +179,18 @@ int matcInv(matrix_t A, matrix_t dest) {
 
     return 0;
 }
+
+int matcDet3x3(matrix_t m33, double *det) {
+    if((m33.row != 3) || (m33.col != 3))
+        return -1;
+
+    double **a = m33.array;
+    *det = a[0][0]*a[1][1]*a[2][2] + \
+           a[0][1]*a[1][2]*a[2][0] + \
+           a[0][2]*a[1][0]*a[2][1] - \
+           a[0][2]*a[1][1]*a[2][0] - \
+           a[0][1]*a[1][0]*a[2][2] - \
+           a[0][0]*a[1][2]*a[2][1];
+
+    return 0;
+}
