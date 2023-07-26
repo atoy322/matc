@@ -118,7 +118,13 @@ int matcRref(matrix_t mat) {
             rp++;
             if(rp > mat.row-1) break;
         }
-        if(rp > mat.row-1) break;
+        if(rp > mat.row-1) {
+            if(n == mat.col) {
+                break;
+            } else {
+                continue;
+            }
+        }
         matcPdot(rp, (double)1/mat.array[rp][n], mat); // 主成分を1にする
         matcQdot(rp, rank+1, mat); // 行を入れ替えて、要を階段状に配置する
         rp = rank+1; // 行ポインタも入れ替える
