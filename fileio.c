@@ -37,8 +37,11 @@ int matcLoad(FILE *fp, matrix_t mat, char name) {
     int row, col;
     char buf[1];
 
+    fseek(fp, 0, SEEK_SET);
+
     while(1) {
         fread(buf, 1, 1, fp);
+        if(feof(fp)) return -1;
 
         fread(ci.buf, 1, sizeof(int), fp);
         row = ci.N;
@@ -48,10 +51,6 @@ int matcLoad(FILE *fp, matrix_t mat, char name) {
         if(name == buf[0]) break;
 
         fseek(fp, row*col*sizeof(double), SEEK_CUR);
-        if(feof(fp) != 0) {
-            printf("eof");
-            return -1;
-        }
     }
 
     if((row != mat.row) || (col != mat.col))
