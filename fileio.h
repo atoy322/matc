@@ -4,7 +4,7 @@
 #include<stdio.h>
 #include"./matrix.h"
 
-int matcDump(FILE *, matrix_t, char);
-int matcLoad(FILE *, matrix_t, char);
+int matcDump(FILE *fp, matrix_t mat, char name);
+int matcLoad(FILE *fp, matrix_t mat, char name);
 
 #endif
