@@ -1,32 +1,53 @@
+// encoding:cp932
 #include"./display.h"
 
 
 void matcDisplay(matrix_t mat) {
 
-    for(int y=0; y<mat.row; y++) {
-        printf("[");
-        for(int x=0; x<mat.col; x++) {
-            printf("%5.2f", mat.array[y][x]);
-            if(x != (mat.col-1)) {
-                printf(", ");
+    printf("„¡");
+    for(int n=0; n<7*mat.col; n++) printf(" ");
+    printf("„¢\n");
+
+    for(int i=0; i<mat.row; i++) {
+
+        printf("„  ");
+
+        for(int j=0; j<mat.col; j++) {
+            printf("%5.2f", mat.array[i][j]);
+            if(j != (mat.col-1)) {
+                printf("  ");
             }
         }
-        printf("]");
-        printf("\n");
+        printf(" „ \n");
     }
+
+    printf("„¤");
+    for(int n=0; n<7*mat.col; n++) printf(" ");
+    printf("„£\n");
 }
 
 void matcDisplayf(const char *fmt, matrix_t mat) {
 
-    for(int y=0; y<mat.row; y++) {
-        printf("[");
-        for(int x=0; x<mat.col; x++) {
-            printf(fmt, mat.array[y][x]);
-            if(x != (mat.col-1)) {
-                printf(", ");
+    char buf[20] = {};
+    sprintf(buf, fmt, 0);
+    int len = (int)strlen(buf);
+
+    printf("„¡");
+    for(int n=0; n<(len+2)*mat.col; n++) printf(" ");
+    printf("„¢\n");
+
+    for(int i=0; i<mat.row; i++) {
+        printf("„  ");
+        for(int j=0; j<mat.col; j++) {
+            printf(fmt, mat.array[i][j]);
+            if(j != (mat.col-1)) {
+                printf("  ");
             }
         }
-        printf("]");
-        printf("\n");
+        printf(" „ \n");
     }
+
+    printf("„¤");
+    for(int n=0; n<(len+2)*mat.col; n++) printf(" ");
+    printf("„£\n");
 }
