@@ -13,7 +13,9 @@ matrix.o: matrix.h matrix.c
 	gcc -c matrix.c -g
 
 display.o: display.h display.c
-	gcc -c display.c -g
+	iconv -f cp932 -t utf-8 display.c > display_utf8.c
+	gcc -c display_utf8.c -o display.o -g
+	rm display_utf8.c
 
 fileio.o: fileio.h fileio.c
 	gcc -c fileio.c -g
