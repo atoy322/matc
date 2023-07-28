@@ -13,6 +13,7 @@ Functions supported are:
 - calculating a matrix product
 - simplifying a matrix
 - calculating an inverse matrix
+- calculating a determinant
 
 ## How to build a static or shared library
 ```shell
