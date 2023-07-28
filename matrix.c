@@ -194,3 +194,48 @@ int matcDet3x3(matrix_t m33, double *det) {
 
     return 0;
 }
+
+int matcDet(matrix_t mat, double *det) {
+    int rp; // 行ポインタ(スタックポインタ的な)
+    int rank = -1; // 要ができた行
+    *det = 1;
+
+    matrix_t mat_ = matcInit(mat.row, mat.col);
+    matcCopy(mat, mat_);
+
+    for(int n=0; n<mat_.col; n++) {
+        rp = 0;
+        while((mat_.array[rp][n]==0) || (rp <= rank)) {
+            // 主成分が0でない、かつ要ができていない行に行ポインタを合わせる
+            rp++;
+            if(rp > mat_.row-1) break;
+        }
+        if(rp > mat_.row-1) {
+            if(n == mat_.col) {
+                break;
+            } else {
+                continue;
+            }
+        }
+
+        *det *= mat_.array[rp][n];
+        matcPdot(rp, (double)1/mat_.array[rp][n], mat_); // 主成分を1にする
+
+        if(rp != rank+1) *det *= -1;
+        matcQdot(rp, rank+1, mat_); // 行を入れ替えて、要を階段状に配置する
+
+        rp = rank+1; // 行ポインタも入れ替える
+
+        for(int m=0; m<mat_.row; m++) {
+            if(m != rp)
+                matcRdot(m, rp, -mat_.array[m][n], mat_); // 行ポインタが指している行の主成分で他の行を掃出し
+        }
+        rank = rp; // 行ポインタが指している行を「完了」とする
+    }
+
+    for(int n=0; n<mat_.row; n++) *det *= mat_.array[n][n];
+
+    matcDeinit(mat_);
+
+    return rank+1;
+}
