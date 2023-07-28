@@ -1,5 +1,4 @@
 #include"./matrix.h"
-#include <stdio.h>
 
 
 matrix_t matcInit(int row, int col) {
@@ -9,8 +8,8 @@ matrix_t matcInit(int row, int col) {
     X.row = row;
 
     X.array = (double **)calloc(row, sizeof(double *));
-    for(int y=0; y<row; y++) {
-        X.array[y] = (double *)calloc(col, sizeof(double));
+    for(int i=0; i<row; i++) {
+        X.array[i] = (double *)calloc(col, sizeof(double));
     }
 
     return X;
@@ -18,10 +17,22 @@ matrix_t matcInit(int row, int col) {
 
 int matcDeinit(matrix_t mat) {
     // メモリ解放
-    for(int y=0; y<mat.row; y++) {
-        free(mat.array[y]);
+    for(int i=0; i<mat.row; i++) {
+        free(mat.array[i]);
     }
     free(mat.array);
+    return 0;
+}
+
+int matcDeinitn(int n, matrix_t mat1, ...) {
+    va_list ap;
+    va_start(ap, mat1);
+
+    for(int i=0; i<n-1; i++) {
+        matcDeinit(va_arg(ap, matrix_t));
+    }
+
+    va_end(ap);
     return 0;
 }
 

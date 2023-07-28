@@ -2,6 +2,7 @@
 #define MATRIX_H
 
 #include<stdlib.h>
+#include<stdarg.h>
 
 typedef struct {
     int col;
@@ -12,6 +13,7 @@ typedef struct {
 
 matrix_t matcInit(int row, int col);
 int matcDeinit(matrix_t mat);
+int matcDeinitn(int n, matrix_t mat1, ...);
 
 int matcCopy(matrix_t src, matrix_t dest);
 
