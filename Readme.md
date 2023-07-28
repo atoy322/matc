@@ -6,6 +6,8 @@ A tiny, low level C program which treats a matrix.
 > **Warning**
 > This project is in development.
 
+![screenshot](./screen.png)
+
 ## Features
 Functions supported are:
 - adding two arrays
