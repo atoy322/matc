@@ -10,12 +10,12 @@ A tiny, low level C program which treats a matrix.
 
 ## Features
 Functions supported are:
-- adding two arrays
-- displaying an array data
+- adding two matrices
+- displaying a matrix
 - calculating a matrix product
 - simplifying a matrix
-- calculating an inverse matrix
-- calculating a determinant
+- calculating the inverse matrix
+- calculating the determinant
 
 ## How to build a static or shared library
 ```shell

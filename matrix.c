@@ -209,6 +209,9 @@ int matcDet3x3(matrix_t m33, double *det) {
 int matcDet(matrix_t mat, double *det) {
     int rp; // 行ポインタ(スタックポインタ的な)
     int rank = -1; // 要ができた行
+
+    if(mat.row != mat.col) return -1;
+
     *det = 1;
 
     matrix_t mat_ = matcInit(mat.row, mat.col);
