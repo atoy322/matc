@@ -4,10 +4,12 @@
 #include<stdlib.h>
 #include<stdarg.h>
 
+#define matcDtype double // double or float
+
 typedef struct {
     int col;
     int row;
-    double **array;
+    matcDtype **array;
 } matrix_t;
 
 

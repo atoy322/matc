@@ -1,13 +1,14 @@
 #include <stdio.h>
 #include"./matc.h"
 
+
 int main() {
-    double a[3][3] = {
+    matcDtype a[3][3] = {
         { 3,  2,  1},
         { 1, -2,  2},
         { 1,  3, -1}
     };
-    double b[4][5] = {
+    matcDtype b[4][5] = {
         {4, 3, 4, 2, 5},
         {2, 1, 2, 1, 2},
         {1, 4, 3, 1, 5},

@@ -7,9 +7,9 @@ matrix_t matcInit(int row, int col) {
     X.col = col;
     X.row = row;
 
-    X.array = (double **)calloc(row, sizeof(double *));
+    X.array = (matcDtype **)calloc(row, sizeof(matcDtype *));
     for(int i=0; i<row; i++) {
-        X.array[i] = (double *)calloc(col, sizeof(double));
+        X.array[i] = (matcDtype *)calloc(col, sizeof(matcDtype));
     }
 
     return X;
@@ -55,9 +55,9 @@ int matcAdd(matrix_t a, matrix_t b, matrix_t dest) {
     if((a.col != b.col)||(a.row != b.row)||(dest.col != a.col)||(dest.row != b.row)) {
         return -1;
     } else {
-        for(int y=0; y<a.row; y++) {
-            for(int x=0; x<a.col; x++) {
-                dest.array[y][x] = a.array[y][x] + b.array[y][x];
+        for(int i=0; i<a.row; i++) {
+            for(int j=0; j<a.col; j++) {
+                dest.array[i][j] = a.array[i][j] + b.array[i][j];
             }
         }
     }
@@ -103,7 +103,7 @@ void matcPdot(int i, double c, matrix_t mat) {
 
 void matcQdot(int i, int j, matrix_t mat) {
     // 行基本変形(第i行と第j行を入れ替え)
-    double tmp;
+    matcDtype tmp;
     for(int n=0; n<mat.col; n++) {
         tmp = mat.array[i][n];
         mat.array[i][n] = mat.array[j][n];
@@ -195,7 +195,7 @@ int matcDet3x3(matrix_t m33, double *det) {
     if((m33.row != 3) || (m33.col != 3))
         return -1;
 
-    double **a = m33.array;
+    matcDtype **a = m33.array;
     *det = a[0][0]*a[1][1]*a[2][2] + \
            a[0][1]*a[1][2]*a[2][0] + \
            a[0][2]*a[1][0]*a[2][1] - \
