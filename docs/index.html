@@ -6,9 +6,11 @@
         <title>Libmatc Documentation</title>
         <link rel="stylesheet" href="destyle.css">
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="dracula.css">
+        <script src="script.js"></script>
     </head>
 
-    <body>
+    <body onload="onload();">
         <header>
             <div class="title">
                 <a href="https://github.com/atoy322/matc" class="title_link">libmatc</a>
@@ -30,18 +32,14 @@
                     ・gcc<br><br>
                     </p>
                     <p>　適当なディレクトリにmatcのリポジトリをクローンし、makeコマンドを実行する。</p>
-                    <iframe height="100" src="build.html" class="code"></iframe>
+                    <div src="build.html" class="code"></div>
                     <p>すると、matcディレクトリ内にlibmatcディレクトリが作成され、libmatc/libとlibmatc/includeが作成される。　libにはlibmatc.aファイルが、includeにはすべてのヘッダファイルコピーされる。</p>
                     <h1 id="sec2">2. C言語による利用</h1>
                     <p>　ここでは、簡単なアプリケーションの作成を例に、libmatcの利用方法を紹介する。　まず、上記の方法で作成したlibmatcフォルダを自分のプロジェクトディレクトリへコピーする。　次に、次のようなプログラムを作成し、これをmain.cとする。</p>
-                    <iframe height="300" src="main.html" class="code"></iframe>
+                    <div height="300" src="main.html" class="code"></div>
                     <p>　matcInit(3, 3)関数は3x3行列のためのメモリを確保する関数である。　matcEye関数は、n次単位行列を生成する。　matcDisplay関数は、引数に与えられた行列を標準出力に出力する。　matcDeinit関数は、matcInit関数で確保されたメモリを解放する。</p>
                     <p>　そして、次のようにコンパイルする。</p>
-                    <iframe height="180" src="compile.html" class="code"></iframe>
-
-                    <!--
-                    <iframe src="main.html" class="code"></iframe>
-                    -->
+                    <div height="180" src="compile.html" class="code"></div>
 
                     <div class="func">
                         <p class="declare"></p>

@@ -19,6 +19,7 @@ body {
 .main_content > h1 {
     font-size: 1.6em;
     margin-left: 0px;
+    margin-bottom: 10px;
     padding-top: 50px;
 }
 
@@ -113,10 +114,16 @@ main {
     margin-right: 15%;
 }
 
+.highlight > pre {
+    white-space: pre-wrap;
+    padding: 1em;
+}
+
 .code {
     width: 100%;
     margin-top: 5%;
     margin-bottom: 5%;
+    overflow-y: scroll;
 }
 
 .func {
