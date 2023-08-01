@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Libmatc Documentation</title>
+        <link rel="stylesheet" href="destyle.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <header>
+            <div class="title">
+                <a href="https://github.com/atoy322/matc" class="title_link">libmatc</a>
+            </div>
+        </header>
+        <div class="container">
+            <aside>
+                <div class="content aside_content">
+                    <a href="#sec1" class="sec">1. 静的ライブラリのビルド方法</a>
+                    <a href="#sec2" class="sec">2. C言語による利用</a>
+                </div>
+            </aside>
+
+            <main>
+                <div class="content main_content">
+                    <h1 id="sec1">1. 静的ライブラリのビルド方法</h1>
+                    <p>　ビルドに必要なものは次の通りである。<br>
+                    ・make<br>
+                    ・gcc<br><br>
+                    </p>
+                    <p>　適当なディレクトリにmatcのリポジトリをクローンし、makeコマンドを実行する。</p>
+                    <iframe height="100" src="build.html" class="code"></iframe>
+                    <p>すると、matcディレクトリ内にlibmatcディレクトリが作成され、libmatc/libとlibmatc/includeが作成される。　libにはlibmatc.aファイルが、includeにはすべてのヘッダファイルコピーされる。</p>
+                    <h1 id="sec2">2. C言語による利用</h1>
+                    <p>　ここでは、簡単なアプリケーションの作成を例に、libmatcの利用方法を紹介する。　まず、上記の方法で作成したlibmatcフォルダを自分のプロジェクトディレクトリへコピーする。　次に、次のようなプログラムを作成し、これをmain.cとする。</p>
+                    <iframe height="300" src="main.html" class="code"></iframe>
+                    <p>　matcInit(3, 3)関数は3x3行列のためのメモリを確保する関数である。　matcEye関数は、n次単位行列を生成する。　matcDisplay関数は、引数に与えられた行列を標準出力に出力する。　matcDeinit関数は、matcInit関数で確保されたメモリを解放する。</p>
+                    <p>　そして、次のようにコンパイルする。</p>
+                    <iframe height="180" src="compile.html" class="code"></iframe>
+
+                    <!--
+                    <iframe src="main.html" class="code"></iframe>
+                    -->
+
+                    <div class="func">
+                        <p class="declare"></p>
+                        <p class="arg"></p>
+                        <p class="ret"></p>
+                    </div>
+
+                    <div class="warn">
+                        <img src="WarningIcon.png">
+                        <p class="msg"></p>
+                    </div>
+
+                </div>
+            </main>
+        </div>
+
+        <div class="footer">
+            <div class="author"><a href="https://github.com/atoy322">@atoy322</a></div>
+        </div>
+    </body>
+</html>
