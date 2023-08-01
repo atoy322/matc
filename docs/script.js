@@ -1,4 +1,4 @@
-function onload() {
+window.onload = function () {
     var classes = document.getElementsByClassName("code");
 
     for(var i=0; i<classes.length; i++) {
