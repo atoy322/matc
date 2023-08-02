@@ -32,7 +32,7 @@ a.link {
     padding-top: 40px;
 }
 
-.main_content > p, .main_content > b, .main_content > li, .main_content > div {
+.main_content > p, .main_content > b, .main_content > li {
     margin-left: 30px;
 }
 

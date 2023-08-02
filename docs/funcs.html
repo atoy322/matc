@@ -20,6 +20,7 @@
             <aside>
                 <div class="content aside_content">
                     <a href="#sec1" class="sec">1. Treating memory</a>
+                    <a href="#sec2" class="sec">2. Linear Algebra</a>
                 </div>
             </aside>
 
@@ -39,6 +40,14 @@
                     <div class="func">
                         <p class="declare">int matcDeinit(matrix_t mat)</p>
                         <p class="arg">mat : used matrix</p>
+                        <p class="ret">return : succeed or not</p>
+                    </div>
+
+                    <h1 id="sec2" class="sec">2. Linear Algebra</h1>
+                    <div class="func">
+                        <p class="declare">int matcDot(matrix_t A, matrix_t B, matrix_t dest)</p>
+                        <p class="arg">A : matrix whose col is B.row</p>
+                        <p class="arg">B : matrix whose row is A.col</p>
                         <p class="ret">return : succeed or not</p>
                     </div>
 
@@ -62,7 +71,7 @@
         </div>
 
         <div class="footer">
-            <div class="author"><a href="https://github.com/atoy322">@atoy322</a></div>
+            <div class="author">author: <a href="https://github.com/atoy322">@atoy322</a></div>
         </div>
     </body>
 </html>
