@@ -19,28 +19,32 @@
         <div class="container">
             <aside>
                 <div class="content aside_content">
-                    <a href="#sec1" class="sec">1. 静的ライブラリのビルド方法</a>
-                    <a href="#sec2" class="sec">2. C言語による利用</a>
+                    <a href="#sec1" class="sec">1. About</a>
+                    <a href="#sec2" class="sec">2. Get started</a>
+                    <a href="#sub2.1" class="sub">2.1 Build a static library</a>
+                    <a href="#sub2.2" class="sub">2.2 Coding in C</a>
                 </div>
             </aside>
 
             <main>
                 <div class="content main_content">
-                    <h1 id="sec1">1. 静的ライブラリのビルド方法</h1>
-                    <p>　ビルドに必要なものは次の通りである。<br>
-                    ・make<br>
-                    ・gcc<br><br>
-                    </p>
-                    <p>　適当なディレクトリにmatcのリポジトリをクローンし、makeコマンドを実行する。</p>
+                    <h1 id="sec1">1. About</h1>
+                    <h1 id="sec2">2. Get started</h1>
+                    <h2 id="sub2.1">2.1 Build a static library</h2>
+                    <p>Build requirements:</p>
+                    <li>make</li>
+                    <li>gcc</li>
+                    <p>build a static library in the way follow.</p>
                     <div src="build.html" class="code"></div>
-                    <p>すると、matcディレクトリ内にlibmatcディレクトリが作成され、libmatc/libとlibmatc/includeが作成される。　libにはlibmatc.aファイルが、includeにはすべてのヘッダファイルコピーされる。</p>
-                    <h1 id="sec2">2. C言語による利用</h1>
-                    <p>　ここでは、簡単なアプリケーションの作成を例に、libmatcの利用方法を紹介する。　まず、上記の方法で作成したlibmatcフォルダを自分のプロジェクトディレクトリへコピーする。　次に、次のようなプログラムを作成し、これをmain.cとする。</p>
-                    <div height="300" src="main.html" class="code"></div>
-                    <p>　matcInit(3, 3)関数は3x3行列のためのメモリを確保する関数である。　matcEye関数は、n次単位行列を生成する。　matcDisplay関数は、引数に与えられた行列を標準出力に出力する。　matcDeinit関数は、matcInit関数で確保されたメモリを解放する。</p>
-                    <p>　そして、次のようにコンパイルする。</p>
-                    <div height="180" src="compile.html" class="code"></div>
+                    <p>Then, "libmatc/lib" and "libmatc/include" directory will be created.</p>
+                    <h2 id="sub2.2">2.2 Coding in C</h1>
+                    <p>First, move "libmatc" directory into your project directory. And write a C program like this:</p>
+                    <div src="main.html" class="code"></div>
+                    <p>This program is equivalent to "import numpy as np; print(np.eye(3))" in Numpy.</p>
+                    <p>Finally, an executable file will be created by running this command:</p>
+                    <div src="compile.html" class="code"></div>
 
+                    <!--
                     <div class="func">
                         <p class="declare"></p>
                         <p class="arg"></p>
@@ -51,13 +55,14 @@
                         <img src="WarningIcon.png">
                         <p class="msg"></p>
                     </div>
+                    -->
 
                 </div>
             </main>
         </div>
 
         <div class="footer">
-            <div class="author"><a href="https://github.com/atoy322">@atoy322</a></div>
+            <div class="author">author: <a href="https://github.com/atoy322">@atoy322</a></div>
         </div>
     </body>
 </html>

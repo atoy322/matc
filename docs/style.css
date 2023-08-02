@@ -19,17 +19,16 @@ body {
 .main_content > h1 {
     font-size: 1.6em;
     margin-left: 0px;
-    margin-bottom: 10px;
-    padding-top: 50px;
+    padding-top: 40px;
 }
 
 .main_content > h2 {
     font-size: 1.2em;
     margin-left: 15px;
-    padding-top: 50px;
+    padding-top: 40px;
 }
 
-.main_content > p {
+.main_content > p, .main_content > b, .main_content > li {
     margin-left: 30px;
 }
 
@@ -107,7 +106,6 @@ main {
 }
 
 .main_content {
-    letter-spacing: 1px;
     line-height: 2em;
     width: 70%;
     margin-left: 5%;
@@ -123,7 +121,6 @@ main {
     width: 100%;
     margin-top: 5%;
     margin-bottom: 5%;
-    overflow-y: scroll;
 }
 
 .func {
@@ -226,7 +223,6 @@ main {
         margin-right: 5%;
     }
 
-    .main_content > p {
-        margin-left: 0px;
+    .main_content > p, .main_content > b, .main_content > li {
     }
 }
