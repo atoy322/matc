@@ -10,12 +10,9 @@ elseif(WIN32)
 endif()
 
 set_target_properties(matc PROPERTIES PUBLIC_HEADER "matc.h;matrix.h;display.h;fileio.h")
-#install(TARGETS matc
-#    LIBRARY DESTINATION ${CMAKE_INSTALL_PREFIX}/lib
-#    PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_PREFIX}/include)
 
 install(
     TARGETS matc
-    LIBRARY
+    LIBRARY lib
     PUBLIC_HEADER DESTINATION include/matc
 )
