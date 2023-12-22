@@ -6,7 +6,15 @@
 #include"./matrix.h"
 
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 void matcDisplay(matrix_t mat);
 void matcDisplayf(const char *fmt, matrix_t mat);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

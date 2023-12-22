@@ -1,0 +1,8 @@
+/data/data/com.termux/files/home/Repos/matc/build/CMakeFiles/main.dir
+/data/data/com.termux/files/home/Repos/matc/build/CMakeFiles/matc.dir
+/data/data/com.termux/files/home/Repos/matc/build/CMakeFiles/edit_cache.dir
+/data/data/com.termux/files/home/Repos/matc/build/CMakeFiles/rebuild_cache.dir
+/data/data/com.termux/files/home/Repos/matc/build/CMakeFiles/list_install_components.dir
+/data/data/com.termux/files/home/Repos/matc/build/CMakeFiles/install.dir
+/data/data/com.termux/files/home/Repos/matc/build/CMakeFiles/install/local.dir
+/data/data/com.termux/files/home/Repos/matc/build/CMakeFiles/install/strip.dir

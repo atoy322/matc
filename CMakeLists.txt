@@ -13,6 +13,6 @@ set_target_properties(matc PROPERTIES PUBLIC_HEADER "matc.h;matrix.h;display.h;f
 
 install(
     TARGETS matc
-    LIBRARY lib
+    LIBRARY DESTINATION lib
     PUBLIC_HEADER DESTINATION include/matc
 )

@@ -12,6 +12,9 @@ typedef struct {
     matcDtype **array;
 } matrix_t;
 
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 matrix_t matcInit(int row, int col);
 int matcDeinit(matrix_t mat);
@@ -38,5 +41,9 @@ int matcInv(matrix_t A, matrix_t dest);
 int matcDet3x3(matrix_t m33, double *det);
 
 int matcDet(matrix_t mat, double *det);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif
