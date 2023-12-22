@@ -9,3 +9,13 @@ elseif(WIN32)
     add_library(matc STATIC matrix.c display.c fileio.c)
 endif()
 
+set_target_properties(matc PROPERTIES PUBLIC_HEADER "matc.h;matrix.h;display.h;fileio.h")
+#install(TARGETS matc
+#    LIBRARY DESTINATION ${CMAKE_INSTALL_PREFIX}/lib
+#    PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_PREFIX}/include)
+
+install(
+    TARGETS matc
+    LIBRARY
+    PUBLIC_HEADER DESTINATION matc
+)
