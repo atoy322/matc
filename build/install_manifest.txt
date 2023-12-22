@@ -1,5 +1,0 @@
-/data/data/com.termux/files/usr/lib/libmatc.a
-/data/data/com.termux/files/usr/include/matc/matc.h
-/data/data/com.termux/files/usr/include/matc/matrix.h
-/data/data/com.termux/files/usr/include/matc/display.h
-/data/data/com.termux/files/usr/include/matc/fileio.h

@@ -1,2 +1,0 @@
-/data/data/com.termux/files/usr/bin/llvm-ar qc libmatc.a CMakeFiles/matc.dir/matrix.c.o CMakeFiles/matc.dir/display_utf8.c.o CMakeFiles/matc.dir/fileio.c.o
-/data/data/com.termux/files/usr/bin/llvm-ranlib libmatc.a
