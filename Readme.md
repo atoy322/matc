@@ -14,15 +14,17 @@ Functions supported are:
 - displaying a matrix
 - calculating a matrix product
 - simplifying a matrix
-- calculating the inverse matrix
-- calculating the determinant
+- calculating an inverse matrix
+- calculating a determinant
 
-## How to build a static or shared library
+## How to build a static library
 ```shell
 git clone https://github.com/atoy322/matc.git
 cd matc
-make static
-# make shared
+mkdir build
+cd build
+cmake ..
+make
 ```
 
 ## How to use
